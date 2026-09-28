@@ -1,0 +1,1123 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_001",
+      "email": "admin@vortexapex.io",
+      "password_hash": "$2b$10$0KtWIIQYTbpA9r/E9jzoX.zz8BvZlxlaneC.MiK94E8yqOvY.x1xi",
+      "name": "Nexus Commander (Admin)",
+      "role": "admin",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80",
+      "created_at": "2026-09-27T21:34:16.257Z"
+    },
+    {
+      "id": "usr_customer_002",
+      "email": "netrunner@matrix.io",
+      "password_hash": "$2b$10$0KtWIIQYTbpA9r/E9jzoX.zz8BvZlxlaneC.MiK94E8yqOvY.x1xi",
+      "name": "Vesper Vance",
+      "role": "customer",
+      "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=150&q=80",
+      "created_at": "2026-09-27T21:34:16.258Z"
+    },
+    {
+      "id": "usr_1790544984558_olqm32",
+      "email": "operative_1790544984408@vortexapex.io",
+      "password_hash": "$2b$10$gE9RcyI1cPLJw4g2jlz13uodj4IuOtUx1jcvlY//5a59OX6Jm7cGS",
+      "name": "Agent Zero",
+      "role": "customer",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=operative_1790544984408%40vortexapex.io",
+      "created_at": "2026-09-27T21:36:24.558Z"
+    },
+    {
+      "id": "usr_1790546002202_sch6qj",
+      "email": "operative_1790546002125@vortexapex.io",
+      "password_hash": "$2b$10$bYQQiHRoGd5xN.AUdlrIYumWiRh6ec5zNHYsjYuhsUqCkbjh9drXe",
+      "name": "Agent Zero",
+      "role": "customer",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=operative_1790546002125%40vortexapex.io",
+      "created_at": "2026-09-27T21:53:22.202Z"
+    },
+    {
+      "id": "usr_1790554240095_h9vhxd",
+      "email": "operative_1790554239780@vortexapex.io",
+      "password_hash": "$2b$10$WCO5eP8wluQyUjHQjrE5.eOW/zF2Sg70PB9yQP3KtloWMvsP.71FW",
+      "name": "Agent Zero",
+      "role": "customer",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=operative_1790554239780%40vortexapex.io",
+      "created_at": "2026-09-28T00:10:40.095Z"
+    },
+    {
+      "id": "usr_1790554893024_6qj2pz",
+      "email": "operative_1790554892803@vortexapex.io",
+      "password_hash": "$2b$10$JXjBKv2F9QfGwcLtahVv/.ZO7ntfX4JvWuyrUe7HxgrTyo.HH9NLa",
+      "name": "Agent Zero",
+      "role": "customer",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=operative_1790554892803%40vortexapex.io",
+      "created_at": "2026-09-28T00:21:33.024Z"
+    },
+    {
+      "id": "usr_1790555250320_7nv3lr",
+      "email": "operative_1790555250035@vortexapex.io",
+      "password_hash": "$2b$10$0AwrFNr9rPAfTUfvxOtVUe9ewm/6yYxxFUh488KZsN6CmrWQdabOS",
+      "name": "Agent Zero",
+      "role": "customer",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=operative_1790555250035%40vortexapex.io",
+      "created_at": "2026-09-28T00:27:30.320Z"
+    },
+    {
+      "id": "usr_1790555651751_7yao5e",
+      "email": "muhammadusmananwar50@gmail.com",
+      "password_hash": "$2b$10$5FzkIA.i3OUT.NVMsAxt5.uhIIdK/UhDDFO539ec06UHfbsN0II.W",
+      "name": "usman",
+      "role": "customer",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=muhammadusmananwar50%40gmail.com",
+      "created_at": "2026-09-28T00:34:11.751Z"
+    },
+    {
+      "id": "usr_1790556074629_iy3lda",
+      "email": "operative_1790556074422@vortexapex.io",
+      "password_hash": "$2b$10$A1GtpFioV2JPbO0IScz3YeFUaU6u5mvbmJqiADUIuPWOQeqoif0da",
+      "name": "Agent Zero",
+      "role": "customer",
+      "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=operative_1790556074422%40vortexapex.io",
+      "created_at": "2026-09-28T00:41:14.629Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_cyber_deck_9000",
+      "sku": "ND-9000-PRO",
+      "name": "Neural Deck Apex X-9000",
+      "tag": "ULTRA HIGH END",
+      "category": "Neural Interfaces",
+      "price": 1899.99,
+      "original_price": 2299.99,
+      "stock_quantity": 12,
+      "rating": 4.95,
+      "reviews_count": 84,
+      "image_url": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
+      "description": "Direct cortical synaptic interface with quantum bus bridge and sub-millisecond neural telemetry. Designed for cybernetic operatives and elite netrunners.",
+      "features": [
+        "Direct 128-channel neural link",
+        "Liquid nitrogen cryo-cooling",
+        "Zero-latency quantum encryption",
+        "Hardware kill switch with biometric failsafe"
+      ],
+      "specs": {
+        "Interface Protocol": "SynapseLink v4.2",
+        "Clock Speed": "18.4 PHz Quantum",
+        "Power Drain": "45W Micro-Fusion",
+        "Weight": "420g Aerogel Alloy"
+      },
+      "is_featured": true
+    },
+    {
+      "id": "prod_quantum_core_x7",
+      "sku": "QC-700-ULTRA",
+      "name": "Quantum Cryo-Cortex Core X7",
+      "tag": "BEST SELLER",
+      "category": "Computing Cores",
+      "price": 3499,
+      "original_price": 3899,
+      "stock_quantity": 6,
+      "rating": 5,
+      "reviews_count": 119,
+      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      "description": "Sub-atomic lattice calculation module capable of 128 Qubit coherent matrix calculations with autonomous AI error correction.",
+      "features": [
+        "128 Superconducting Qubits",
+        "Integrated vacuum thermal jacket",
+        "PCIe Gen-7 Sub-Space Bus",
+        "Neural weight acceleration"
+      ],
+      "specs": {
+        "Qubit Coherence": "99.9997%",
+        "Operating Temp": "0.015 Kelvin",
+        "Throughput": "840 TB/s",
+        "Warranty": "10-Year Quantum Stability"
+      },
+      "is_featured": true
+    },
+    {
+      "id": "prod_chrono_visor_hud",
+      "sku": "CV-HUD-400",
+      "name": "Chrono-Visor AR Retinal HUD IV",
+      "tag": "NEW RELEASE",
+      "category": "Holographic Displays",
+      "price": 1249.5,
+      "original_price": 1499,
+      "stock_quantity": 18,
+      "rating": 4.88,
+      "reviews_count": 62,
+      "image_url": "https://images.unsplash.com/photo-1622979135225-d2ba269bc1df?auto=format&fit=crop&w=800&q=80",
+      "description": "Zero-weight micro-LED retinal projection glasses with tactical heat-mapping, neural eye tracking, and dynamic light occlusion.",
+      "features": [
+        "True 16K Retinal Projection",
+        "360° LiDAR depth scanner",
+        "Auto-tinting photon shield",
+        "Bone conduction audio suite"
+      ],
+      "specs": {
+        "Field of View": "145 Degrees",
+        "Refresh Rate": "480 Hz Dynamic",
+        "Battery Life": "36 Hours Continuous",
+        "Chassis": "Forged Carbon Titanium"
+      },
+      "is_featured": true
+    },
+    {
+      "id": "prod_fusion_cell_omega",
+      "sku": "FC-OMEGA-80",
+      "name": "Sub-Zero Fusion Cell 8000mAh",
+      "tag": "LIMITED STOCK",
+      "category": "Energy Units",
+      "price": 799.99,
+      "original_price": 950,
+      "stock_quantity": 1,
+      "rating": 4.92,
+      "reviews_count": 43,
+      "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+      "description": "Miniaturized tritium-deuterium catalyst cell providing continuous uninterrupted power for cybernetic limbs, rigs, and exoskeletons.",
+      "features": [
+        "Indestructible shock-resistant casing",
+        "Thermal emission masking",
+        "Magnetic dock rapid inductive charge",
+        "Anti-overcharge surge clamp"
+      ],
+      "specs": {
+        "Capacity": "8,000 mAh High-Density",
+        "Continuous Output": "400 Watts Peak",
+        "Recharge Cycle": "50,000 Cycles",
+        "Safety Rating": "Class-A Orbital Certified"
+      },
+      "is_featured": false
+    },
+    {
+      "id": "prod_bionic_hand_mk5",
+      "sku": "BH-MK5-TACT",
+      "name": "Cybernetic Bionic Manipulator MK-V",
+      "tag": "TOP RATED",
+      "category": "Cybernetic Implants",
+      "price": 4890,
+      "original_price": 5200,
+      "stock_quantity": 8,
+      "rating": 4.97,
+      "reviews_count": 51,
+      "image_url": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+      "description": "Carbon-titanium prosthetic manipulator equipped with myoelectric sensors, micro-vibrational haptics, and 250kg hydraulic grip strength.",
+      "features": [
+        "Micro-haptic fingertip feedback",
+        "250kg crush force rating",
+        "Sub-millimeter finger dexterity",
+        "Waterproof IP69K submerged rating"
+      ],
+      "specs": {
+        "Actuator Type": "Piezoelectric Harmonic",
+        "Sensing Latency": "< 2ms Myoelectric",
+        "Structural Material": "Grade 5 Aerospace Titanium",
+        "Weight": "780g"
+      },
+      "is_featured": true
+    },
+    {
+      "id": "prod_obsidian_vault_16tb",
+      "sku": "OV-16TB-MIL",
+      "name": "Obsidian Sub-Atomic Vault 16TB",
+      "tag": "ESSENTIAL",
+      "category": "Storage Modules",
+      "price": 649,
+      "original_price": 799,
+      "stock_quantity": 25,
+      "rating": 4.86,
+      "reviews_count": 98,
+      "image_url": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=800&q=80",
+      "description": "Atomic spin memory block with hardware AES-512 self-destruct fuse and EMP shielding. Survived atmospheric re-entry testing.",
+      "features": [
+        "120 GB/s sequential read/write",
+        "Self-purging thermite circuit failsafe",
+        "Solid monolithic crystalline housing",
+        "Cross-platform neural bus link"
+      ],
+      "specs": {
+        "Capacity": "16 Terabytes",
+        "Transfer Speed": "120 GB/s",
+        "Encryption": "AES-512 Quantum Hash",
+        "Shock Resistance": "10,000 Gs"
+      },
+      "is_featured": false
+    },
+    {
+      "id": "prod_stealth_exosuit",
+      "sku": "SE-EXO-V2",
+      "name": "Nano-Fiber Kinetic Exosuit V2",
+      "tag": "LUXURY",
+      "category": "Wearable Tech",
+      "price": 5999,
+      "original_price": 6500,
+      "stock_quantity": 3,
+      "rating": 4.99,
+      "reviews_count": 27,
+      "image_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+      "description": "Non-Newtonian fluid armor interwoven with artificial carbon nanotube muscles for 4x strength augmentation and thermal cloaking.",
+      "features": [
+        "400% muscle output augmentation",
+        "Thermal infrared signature masking",
+        "Integrated trauma stabilization injector",
+        "Kinetic recoil absorption"
+      ],
+      "specs": {
+        "Augmentation Ratio": "4.2x Human Base",
+        "Power Duration": "18 Hours",
+        "Armor Class": "NIJ Level IV Ballistic",
+        "Total Weight": "4.1 kg"
+      },
+      "is_featured": true
+    },
+    {
+      "id": "prod_gravity_drive_micro",
+      "sku": "GD-MICRO-100",
+      "name": "Micro-Gravity Anti-Inertia Coil",
+      "tag": "EXPERIMENTAL",
+      "category": "Propulsion Units",
+      "price": 8900,
+      "original_price": 9999,
+      "stock_quantity": 2,
+      "rating": 5,
+      "reviews_count": 14,
+      "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80",
+      "description": "Localized gravitational manipulation field generator for frictionless levitation rigs and high-acceleration drone stabilization.",
+      "features": [
+        "Zero-G localized levitation field",
+        "Active warp wave stabilization",
+        "Instantaneous directional vectoring",
+        "Requires Class-3 Reactor clearance"
+      ],
+      "specs": {
+        "Max Lift Load": "120 kg Static",
+        "Field Radius": "1.8 Meters",
+        "Core Frequency": "4.8 GHz Graviton",
+        "Harmonic Distortion": "< 0.001%"
+      },
+      "is_featured": false
+    }
+  ],
+  "carts": {
+    "usr_1790544984558_olqm32": [],
+    "guest_1790545830953_cggw1r5": [],
+    "usr_1790546002202_sch6qj": [],
+    "usr_1790554240095_h9vhxd": [],
+    "guest_1790554668795_burrln9": [],
+    "usr_customer_002": [],
+    "usr_admin_001": [],
+    "usr_1790554893024_6qj2pz": [],
+    "usr_1790555250320_7nv3lr": [],
+    "usr_1790555651751_7yao5e": [
+      {
+        "productId": "prod_fusion_cell_omega",
+        "quantity": 3,
+        "addedAt": "2026-09-28T00:35:56.752Z",
+        "updatedAt": "2026-09-28T00:35:59.321Z"
+      }
+    ],
+    "usr_1790556074629_iy3lda": []
+  },
+  "orders": [
+    {
+      "id": "ord_1790556074854_esvjk7",
+      "order_number": "VX-742456",
+      "user_id": "usr_1790556074629_iy3lda",
+      "customer_email": "operative_1790556074422@vortexapex.io",
+      "customer_name": "Agent Zero",
+      "shipping_address": {
+        "fullName": "Agent Zero",
+        "addressLine": "Sector 4, Neon Spire 101",
+        "city": "Neo-Tokyo",
+        "state": "Kanto Orbit",
+        "country": "Cyber Federation"
+      },
+      "shipping_method": "cyber_express",
+      "items": [
+        {
+          "id": "oi_1790556074854_uv7i",
+          "product_id": "prod_cyber_deck_9000",
+          "product_name": "Neural Deck Apex X-9000",
+          "sku": "ND-9000-PRO",
+          "price": 1899.99,
+          "quantity": 2,
+          "image_url": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 3799.98
+        }
+      ],
+      "subtotal": 3799.98,
+      "discount_amount": 760,
+      "discount_code": "NEO2026",
+      "tax": 250.8,
+      "shipping_cost": 18,
+      "total": 3308.78,
+      "payment_method": "STRIPE_SANDBOX_CARD",
+      "payment_status": "REFUNDED",
+      "payment_intent_id": "pi_sbx_1790556074854",
+      "created_at": "2026-09-28T00:41:14.854Z",
+      "refunded_at": "2026-09-28T00:41:14.887Z"
+    },
+    {
+      "id": "ord_1790555768655_s0a7jf",
+      "order_number": "VX-623275",
+      "user_id": "guest_user",
+      "customer_email": "muhammadusmananwar50@gmail.com",
+      "customer_name": "usman",
+      "shipping_address": {
+        "fullName": "usman",
+        "email": "muhammadusmananwar50@gmail.com",
+        "addressLine": "742 Evergreen Terrace, Sector 4",
+        "city": "Neo-Tokyo",
+        "state": "Kanto",
+        "postalCode": "90210",
+        "country": "United States",
+        "cardholderName": "USMAN"
+      },
+      "shipping_method": "cyber_express",
+      "items": [
+        {
+          "id": "oi_1790555768655_hdoa",
+          "product_id": "prod_fusion_cell_omega",
+          "product_name": "Sub-Zero Fusion Cell 8000mAh",
+          "sku": "FC-OMEGA-80",
+          "price": 799.99,
+          "quantity": 3,
+          "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 2399.9700000000003
+        }
+      ],
+      "subtotal": 2399.97,
+      "discount_amount": 0,
+      "discount_code": null,
+      "tax": 198,
+      "shipping_cost": 18,
+      "total": 2615.97,
+      "payment_method": "STRIPE_SANDBOX_CARD",
+      "payment_status": "PAID",
+      "payment_intent_id": "pi_sbx_1790555768046",
+      "created_at": "2026-09-28T00:36:08.655Z"
+    },
+    {
+      "id": "ord_1790555250581_w0epcj",
+      "order_number": "VX-575484",
+      "user_id": "usr_1790555250320_7nv3lr",
+      "customer_email": "operative_1790555250035@vortexapex.io",
+      "customer_name": "Agent Zero",
+      "shipping_address": {
+        "fullName": "Agent Zero",
+        "addressLine": "Sector 4, Neon Spire 101",
+        "city": "Neo-Tokyo",
+        "state": "Kanto Orbit",
+        "country": "Cyber Federation"
+      },
+      "shipping_method": "cyber_express",
+      "items": [
+        {
+          "id": "oi_1790555250581_wcsj",
+          "product_id": "prod_cyber_deck_9000",
+          "product_name": "Neural Deck Apex X-9000",
+          "sku": "ND-9000-PRO",
+          "price": 1899.99,
+          "quantity": 2,
+          "image_url": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 3799.98
+        }
+      ],
+      "subtotal": 3799.98,
+      "discount_amount": 760,
+      "discount_code": "NEO2026",
+      "tax": 250.8,
+      "shipping_cost": 18,
+      "total": 3308.78,
+      "payment_method": "STRIPE_SANDBOX_CARD",
+      "payment_status": "REFUNDED",
+      "payment_intent_id": "pi_sbx_1790555250581",
+      "created_at": "2026-09-28T00:27:30.581Z",
+      "refunded_at": "2026-09-28T00:27:30.609Z"
+    },
+    {
+      "id": "ord_1790554893284_m5z3mz",
+      "order_number": "VX-369652",
+      "user_id": "usr_1790554893024_6qj2pz",
+      "customer_email": "operative_1790554892803@vortexapex.io",
+      "customer_name": "Agent Zero",
+      "shipping_address": {
+        "fullName": "Agent Zero",
+        "addressLine": "Sector 4, Neon Spire 101",
+        "city": "Neo-Tokyo",
+        "state": "Kanto Orbit",
+        "country": "Cyber Federation"
+      },
+      "shipping_method": "cyber_express",
+      "items": [
+        {
+          "id": "oi_1790554893284_nh5a",
+          "product_id": "prod_cyber_deck_9000",
+          "product_name": "Neural Deck Apex X-9000",
+          "sku": "ND-9000-PRO",
+          "price": 1899.99,
+          "quantity": 2,
+          "image_url": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 3799.98
+        }
+      ],
+      "subtotal": 3799.98,
+      "discount_amount": 760,
+      "discount_code": "NEO2026",
+      "tax": 250.8,
+      "shipping_cost": 18,
+      "total": 3308.78,
+      "payment_method": "STRIPE_SANDBOX_CARD",
+      "payment_status": "REFUNDED",
+      "payment_intent_id": "pi_sbx_1790554893284",
+      "created_at": "2026-09-28T00:21:33.284Z",
+      "refunded_at": "2026-09-28T00:21:33.332Z"
+    },
+    {
+      "id": "ord_1790554240345_utunvh",
+      "order_number": "VX-557255",
+      "user_id": "usr_1790554240095_h9vhxd",
+      "customer_email": "operative_1790554239780@vortexapex.io",
+      "customer_name": "Agent Zero",
+      "shipping_address": {
+        "fullName": "Agent Zero",
+        "addressLine": "Sector 4, Neon Spire 101",
+        "city": "Neo-Tokyo",
+        "state": "Kanto Orbit",
+        "country": "Cyber Federation"
+      },
+      "shipping_method": "cyber_express",
+      "items": [
+        {
+          "id": "oi_1790554240345_hhqa",
+          "product_id": "prod_cyber_deck_9000",
+          "product_name": "Neural Deck Apex X-9000",
+          "sku": "ND-9000-PRO",
+          "price": 1899.99,
+          "quantity": 2,
+          "image_url": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 3799.98
+        }
+      ],
+      "subtotal": 3799.98,
+      "discount_amount": 760,
+      "discount_code": "NEO2026",
+      "tax": 250.8,
+      "shipping_cost": 18,
+      "total": 3308.78,
+      "payment_method": "STRIPE_SANDBOX_CARD",
+      "payment_status": "REFUNDED",
+      "payment_intent_id": "pi_sbx_1790554240344",
+      "created_at": "2026-09-28T00:10:40.346Z",
+      "refunded_at": "2026-09-28T00:10:40.382Z"
+    },
+    {
+      "id": "ord_1790546002488_7y0jb7",
+      "order_number": "VX-876035",
+      "user_id": "usr_1790546002202_sch6qj",
+      "customer_email": "operative_1790546002125@vortexapex.io",
+      "customer_name": "Agent Zero",
+      "shipping_address": {
+        "fullName": "Agent Zero",
+        "addressLine": "Sector 4, Neon Spire 101",
+        "city": "Neo-Tokyo",
+        "state": "Kanto Orbit",
+        "country": "Cyber Federation"
+      },
+      "shipping_method": "cyber_express",
+      "items": [
+        {
+          "id": "oi_1790546002488_v28g",
+          "product_id": "prod_cyber_deck_9000",
+          "product_name": "Neural Deck Apex X-9000",
+          "sku": "ND-9000-PRO",
+          "price": 1899.99,
+          "quantity": 2,
+          "image_url": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 3799.98
+        }
+      ],
+      "subtotal": 3799.98,
+      "discount_amount": 760,
+      "discount_code": "NEO2026",
+      "tax": 250.8,
+      "shipping_cost": 18,
+      "total": 3308.78,
+      "payment_method": "STRIPE_SANDBOX_CARD",
+      "payment_status": "REFUNDED",
+      "payment_intent_id": "pi_sbx_1790546002488",
+      "created_at": "2026-09-27T21:53:22.489Z",
+      "refunded_at": "2026-09-27T21:53:22.538Z"
+    },
+    {
+      "id": "ord_1790544984840_xqs1np",
+      "order_number": "VX-569709",
+      "user_id": "usr_1790544984558_olqm32",
+      "customer_email": "operative_1790544984408@vortexapex.io",
+      "customer_name": "Agent Zero",
+      "shipping_address": {
+        "fullName": "Agent Zero",
+        "addressLine": "Sector 4, Neon Spire 101",
+        "city": "Neo-Tokyo",
+        "state": "Kanto Orbit",
+        "country": "Cyber Federation"
+      },
+      "shipping_method": "cyber_express",
+      "items": [
+        {
+          "id": "oi_1790544984840_nh32",
+          "product_id": "prod_cyber_deck_9000",
+          "product_name": "Neural Deck Apex X-9000",
+          "sku": "ND-9000-PRO",
+          "price": 1899.99,
+          "quantity": 2,
+          "image_url": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 3799.98
+        }
+      ],
+      "subtotal": 3799.98,
+      "discount_amount": 760,
+      "discount_code": "NEO2026",
+      "tax": 250.8,
+      "shipping_cost": 18,
+      "total": 3308.78,
+      "payment_method": "STRIPE_SANDBOX_CARD",
+      "payment_status": "REFUNDED",
+      "payment_intent_id": "pi_sbx_1790544984839",
+      "created_at": "2026-09-27T21:36:24.840Z",
+      "refunded_at": "2026-09-27T21:36:24.870Z"
+    }
+  ],
+  "order_items": [],
+  "inventory_logs": [
+    {
+      "id": "inv_restock_1790556074887_0epx",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": 2,
+      "previous_stock": 10,
+      "new_stock": 12,
+      "reason": "ORDER_REFUND",
+      "reference_id": "ord_1790556074854_esvjk7",
+      "order_number": "VX-742456",
+      "created_at": "2026-09-28T00:41:14.887Z"
+    },
+    {
+      "id": "inv_deduct_1790556074854_eblx",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": -2,
+      "previous_stock": 12,
+      "new_stock": 10,
+      "reason": "ORDER_CHECKOUT",
+      "reference_id": "ord_1790556074854_esvjk7",
+      "order_number": "VX-742456",
+      "created_at": "2026-09-28T00:41:14.854Z"
+    },
+    {
+      "id": "inv_deduct_1790555768655_p7zh",
+      "product_id": "prod_fusion_cell_omega",
+      "product_name": "Sub-Zero Fusion Cell 8000mAh",
+      "change_amount": -3,
+      "previous_stock": 4,
+      "new_stock": 1,
+      "reason": "ORDER_CHECKOUT",
+      "reference_id": "ord_1790555768655_s0a7jf",
+      "order_number": "VX-623275",
+      "created_at": "2026-09-28T00:36:08.655Z"
+    },
+    {
+      "id": "inv_restock_1790555250609_b6by",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": 2,
+      "previous_stock": 10,
+      "new_stock": 12,
+      "reason": "ORDER_REFUND",
+      "reference_id": "ord_1790555250581_w0epcj",
+      "order_number": "VX-575484",
+      "created_at": "2026-09-28T00:27:30.609Z"
+    },
+    {
+      "id": "inv_deduct_1790555250581_6gqr",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": -2,
+      "previous_stock": 12,
+      "new_stock": 10,
+      "reason": "ORDER_CHECKOUT",
+      "reference_id": "ord_1790555250581_w0epcj",
+      "order_number": "VX-575484",
+      "created_at": "2026-09-28T00:27:30.581Z"
+    },
+    {
+      "id": "inv_restock_1790554893332_qava",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": 2,
+      "previous_stock": 10,
+      "new_stock": 12,
+      "reason": "ORDER_REFUND",
+      "reference_id": "ord_1790554893284_m5z3mz",
+      "order_number": "VX-369652",
+      "created_at": "2026-09-28T00:21:33.332Z"
+    },
+    {
+      "id": "inv_deduct_1790554893284_f519",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": -2,
+      "previous_stock": 12,
+      "new_stock": 10,
+      "reason": "ORDER_CHECKOUT",
+      "reference_id": "ord_1790554893284_m5z3mz",
+      "order_number": "VX-369652",
+      "created_at": "2026-09-28T00:21:33.284Z"
+    },
+    {
+      "id": "inv_restock_1790554240382_2gtl",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": 2,
+      "previous_stock": 10,
+      "new_stock": 12,
+      "reason": "ORDER_REFUND",
+      "reference_id": "ord_1790554240345_utunvh",
+      "order_number": "VX-557255",
+      "created_at": "2026-09-28T00:10:40.382Z"
+    },
+    {
+      "id": "inv_deduct_1790554240345_1wsm",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": -2,
+      "previous_stock": 12,
+      "new_stock": 10,
+      "reason": "ORDER_CHECKOUT",
+      "reference_id": "ord_1790554240345_utunvh",
+      "order_number": "VX-557255",
+      "created_at": "2026-09-28T00:10:40.345Z"
+    },
+    {
+      "id": "inv_restock_1790546002538_vz3f",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": 2,
+      "previous_stock": 10,
+      "new_stock": 12,
+      "reason": "ORDER_REFUND",
+      "reference_id": "ord_1790546002488_7y0jb7",
+      "order_number": "VX-876035",
+      "created_at": "2026-09-27T21:53:22.538Z"
+    },
+    {
+      "id": "inv_deduct_1790546002488_17yk",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": -2,
+      "previous_stock": 12,
+      "new_stock": 10,
+      "reason": "ORDER_CHECKOUT",
+      "reference_id": "ord_1790546002488_7y0jb7",
+      "order_number": "VX-876035",
+      "created_at": "2026-09-27T21:53:22.489Z"
+    },
+    {
+      "id": "inv_restock_1790544984870_i3w3",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": 2,
+      "previous_stock": 10,
+      "new_stock": 12,
+      "reason": "ORDER_REFUND",
+      "reference_id": "ord_1790544984840_xqs1np",
+      "order_number": "VX-569709",
+      "created_at": "2026-09-27T21:36:24.870Z"
+    },
+    {
+      "id": "inv_deduct_1790544984840_v1k2",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": -2,
+      "previous_stock": 12,
+      "new_stock": 10,
+      "reason": "ORDER_CHECKOUT",
+      "reference_id": "ord_1790544984840_xqs1np",
+      "order_number": "VX-569709",
+      "created_at": "2026-09-27T21:36:24.840Z"
+    },
+    {
+      "id": "inv_seed_prod_cyber_deck_9000",
+      "product_id": "prod_cyber_deck_9000",
+      "product_name": "Neural Deck Apex X-9000",
+      "change_amount": 12,
+      "previous_stock": 0,
+      "new_stock": 12,
+      "reason": "INITIAL_CATALOG_SEED",
+      "reference_id": "SYSTEM_BOOT",
+      "created_at": "2026-09-27T21:34:16.259Z"
+    },
+    {
+      "id": "inv_seed_prod_quantum_core_x7",
+      "product_id": "prod_quantum_core_x7",
+      "product_name": "Quantum Cryo-Cortex Core X7",
+      "change_amount": 6,
+      "previous_stock": 0,
+      "new_stock": 6,
+      "reason": "INITIAL_CATALOG_SEED",
+      "reference_id": "SYSTEM_BOOT",
+      "created_at": "2026-09-27T21:34:16.259Z"
+    },
+    {
+      "id": "inv_seed_prod_chrono_visor_hud",
+      "product_id": "prod_chrono_visor_hud",
+      "product_name": "Chrono-Visor AR Retinal HUD IV",
+      "change_amount": 18,
+      "previous_stock": 0,
+      "new_stock": 18,
+      "reason": "INITIAL_CATALOG_SEED",
+      "reference_id": "SYSTEM_BOOT",
+      "created_at": "2026-09-27T21:34:16.259Z"
+    },
+    {
+      "id": "inv_seed_prod_fusion_cell_omega",
+      "product_id": "prod_fusion_cell_omega",
+      "product_name": "Sub-Zero Fusion Cell 8000mAh",
+      "change_amount": 4,
+      "previous_stock": 0,
+      "new_stock": 4,
+      "reason": "INITIAL_CATALOG_SEED",
+      "reference_id": "SYSTEM_BOOT",
+      "created_at": "2026-09-27T21:34:16.259Z"
+    },
+    {
+      "id": "inv_seed_prod_bionic_hand_mk5",
+      "product_id": "prod_bionic_hand_mk5",
+      "product_name": "Cybernetic Bionic Manipulator MK-V",
+      "change_amount": 8,
+      "previous_stock": 0,
+      "new_stock": 8,
+      "reason": "INITIAL_CATALOG_SEED",
+      "reference_id": "SYSTEM_BOOT",
+      "created_at": "2026-09-27T21:34:16.259Z"
+    },
+    {
+      "id": "inv_seed_prod_obsidian_vault_16tb",
+      "product_id": "prod_obsidian_vault_16tb",
+      "product_name": "Obsidian Sub-Atomic Vault 16TB",
+      "change_amount": 25,
+      "previous_stock": 0,
+      "new_stock": 25,
+      "reason": "INITIAL_CATALOG_SEED",
+      "reference_id": "SYSTEM_BOOT",
+      "created_at": "2026-09-27T21:34:16.259Z"
+    },
+    {
+      "id": "inv_seed_prod_stealth_exosuit",
+      "product_id": "prod_stealth_exosuit",
+      "product_name": "Nano-Fiber Kinetic Exosuit V2",
+      "change_amount": 3,
+      "previous_stock": 0,
+      "new_stock": 3,
+      "reason": "INITIAL_CATALOG_SEED",
+      "reference_id": "SYSTEM_BOOT",
+      "created_at": "2026-09-27T21:34:16.259Z"
+    },
+    {
+      "id": "inv_seed_prod_gravity_drive_micro",
+      "product_id": "prod_gravity_drive_micro",
+      "product_name": "Micro-Gravity Anti-Inertia Coil",
+      "change_amount": 2,
+      "previous_stock": 0,
+      "new_stock": 2,
+      "reason": "INITIAL_CATALOG_SEED",
+      "reference_id": "SYSTEM_BOOT",
+      "created_at": "2026-09-27T21:34:16.259Z"
+    }
+  ],
+  "sandbox_transactions": [
+    {
+      "id": "tx_1790556074854_ywyus2",
+      "payment_intent_id": "pi_sbx_1790556074854",
+      "order_id": "ord_1790556074854_esvjk7",
+      "order_number": "VX-742456",
+      "amount": 3308.78,
+      "currency": "USD",
+      "status": "succeeded",
+      "card_brand": "Visa",
+      "card_last4": "4242",
+      "risk_score": 12,
+      "latency_ms": 50,
+      "three_d_secure": false,
+      "raw_payload": {
+        "id": "pi_sbx_1790556074854",
+        "object": "payment_intent",
+        "amount": 330878,
+        "amount_received": 330878,
+        "currency": "usd",
+        "status": "succeeded",
+        "client_secret": "pi_sbx_1790556074854_secret_1790556074854",
+        "payment_method_types": [
+          "card"
+        ],
+        "charges": {
+          "data": [
+            {
+              "id": "ch_1790556074854",
+              "paid": true,
+              "status": "succeeded",
+              "receipt_url": "https://vortexapex.io/receipts/VX-742456"
+            }
+          ]
+        }
+      },
+      "created_at": "2026-09-28T00:41:14.854Z"
+    },
+    {
+      "id": "tx_1790555768655_o0qpq8",
+      "payment_intent_id": "pi_sbx_1790555768046",
+      "order_id": "ord_1790555768655_s0a7jf",
+      "order_number": "VX-623275",
+      "amount": 2615.97,
+      "currency": "USD",
+      "status": "succeeded",
+      "card_brand": "Visa",
+      "card_last4": "4242",
+      "risk_score": 12,
+      "latency_ms": 600,
+      "three_d_secure": false,
+      "raw_payload": {
+        "id": "pi_sbx_1790555768046",
+        "object": "payment_intent",
+        "amount": 261597,
+        "amount_received": 261597,
+        "currency": "usd",
+        "status": "succeeded",
+        "client_secret": "pi_sbx_1790555768046_secret_1790555768655",
+        "payment_method_types": [
+          "card"
+        ],
+        "charges": {
+          "data": [
+            {
+              "id": "ch_1790555768655",
+              "paid": true,
+              "status": "succeeded",
+              "receipt_url": "https://vortexapex.io/receipts/VX-623275"
+            }
+          ]
+        }
+      },
+      "created_at": "2026-09-28T00:36:08.655Z"
+    },
+    {
+      "id": "tx_1790555250581_5kl8bg",
+      "payment_intent_id": "pi_sbx_1790555250581",
+      "order_id": "ord_1790555250581_w0epcj",
+      "order_number": "VX-575484",
+      "amount": 3308.78,
+      "currency": "USD",
+      "status": "succeeded",
+      "card_brand": "Visa",
+      "card_last4": "4242",
+      "risk_score": 12,
+      "latency_ms": 50,
+      "three_d_secure": false,
+      "raw_payload": {
+        "id": "pi_sbx_1790555250581",
+        "object": "payment_intent",
+        "amount": 330878,
+        "amount_received": 330878,
+        "currency": "usd",
+        "status": "succeeded",
+        "client_secret": "pi_sbx_1790555250581_secret_1790555250581",
+        "payment_method_types": [
+          "card"
+        ],
+        "charges": {
+          "data": [
+            {
+              "id": "ch_1790555250581",
+              "paid": true,
+              "status": "succeeded",
+              "receipt_url": "https://vortexapex.io/receipts/VX-575484"
+            }
+          ]
+        }
+      },
+      "created_at": "2026-09-28T00:27:30.581Z"
+    },
+    {
+      "id": "tx_1790554893284_cfav4s",
+      "payment_intent_id": "pi_sbx_1790554893284",
+      "order_id": "ord_1790554893284_m5z3mz",
+      "order_number": "VX-369652",
+      "amount": 3308.78,
+      "currency": "USD",
+      "status": "succeeded",
+      "card_brand": "Visa",
+      "card_last4": "4242",
+      "risk_score": 12,
+      "latency_ms": 50,
+      "three_d_secure": false,
+      "raw_payload": {
+        "id": "pi_sbx_1790554893284",
+        "object": "payment_intent",
+        "amount": 330878,
+        "amount_received": 330878,
+        "currency": "usd",
+        "status": "succeeded",
+        "client_secret": "pi_sbx_1790554893284_secret_1790554893284",
+        "payment_method_types": [
+          "card"
+        ],
+        "charges": {
+          "data": [
+            {
+              "id": "ch_1790554893284",
+              "paid": true,
+              "status": "succeeded",
+              "receipt_url": "https://vortexapex.io/receipts/VX-369652"
+            }
+          ]
+        }
+      },
+      "created_at": "2026-09-28T00:21:33.284Z"
+    },
+    {
+      "id": "tx_1790554240346_7jin13",
+      "payment_intent_id": "pi_sbx_1790554240344",
+      "order_id": "ord_1790554240345_utunvh",
+      "order_number": "VX-557255",
+      "amount": 3308.78,
+      "currency": "USD",
+      "status": "succeeded",
+      "card_brand": "Visa",
+      "card_last4": "4242",
+      "risk_score": 12,
+      "latency_ms": 50,
+      "three_d_secure": false,
+      "raw_payload": {
+        "id": "pi_sbx_1790554240344",
+        "object": "payment_intent",
+        "amount": 330878,
+        "amount_received": 330878,
+        "currency": "usd",
+        "status": "succeeded",
+        "client_secret": "pi_sbx_1790554240344_secret_1790554240346",
+        "payment_method_types": [
+          "card"
+        ],
+        "charges": {
+          "data": [
+            {
+              "id": "ch_1790554240346",
+              "paid": true,
+              "status": "succeeded",
+              "receipt_url": "https://vortexapex.io/receipts/VX-557255"
+            }
+          ]
+        }
+      },
+      "created_at": "2026-09-28T00:10:40.346Z"
+    },
+    {
+      "id": "tx_1790546002489_ixvm6o",
+      "payment_intent_id": "pi_sbx_1790546002488",
+      "order_id": "ord_1790546002488_7y0jb7",
+      "order_number": "VX-876035",
+      "amount": 3308.78,
+      "currency": "USD",
+      "status": "succeeded",
+      "card_brand": "Visa",
+      "card_last4": "4242",
+      "risk_score": 12,
+      "latency_ms": 50,
+      "three_d_secure": false,
+      "raw_payload": {
+        "id": "pi_sbx_1790546002488",
+        "object": "payment_intent",
+        "amount": 330878,
+        "amount_received": 330878,
+        "currency": "usd",
+        "status": "succeeded",
+        "client_secret": "pi_sbx_1790546002488_secret_1790546002489",
+        "payment_method_types": [
+          "card"
+        ],
+        "charges": {
+          "data": [
+            {
+              "id": "ch_1790546002489",
+              "paid": true,
+              "status": "succeeded",
+              "receipt_url": "https://vortexapex.io/receipts/VX-876035"
+            }
+          ]
+        }
+      },
+      "created_at": "2026-09-27T21:53:22.489Z"
+    },
+    {
+      "id": "tx_1790544984840_633fjo",
+      "payment_intent_id": "pi_sbx_1790544984839",
+      "order_id": "ord_1790544984840_xqs1np",
+      "order_number": "VX-569709",
+      "amount": 3308.78,
+      "currency": "USD",
+      "status": "succeeded",
+      "card_brand": "Visa",
+      "card_last4": "4242",
+      "risk_score": 12,
+      "latency_ms": 50,
+      "three_d_secure": false,
+      "raw_payload": {
+        "id": "pi_sbx_1790544984839",
+        "object": "payment_intent",
+        "amount": 330878,
+        "amount_received": 330878,
+        "currency": "usd",
+        "status": "succeeded",
+        "client_secret": "pi_sbx_1790544984839_secret_1790544984840",
+        "payment_method_types": [
+          "card"
+        ],
+        "charges": {
+          "data": [
+            {
+              "id": "ch_1790544984840",
+              "paid": true,
+              "status": "succeeded",
+              "receipt_url": "https://vortexapex.io/receipts/VX-569709"
+            }
+          ]
+        }
+      },
+      "created_at": "2026-09-27T21:36:24.840Z"
+    }
+  ],
+  "coupons": [
+    {
+      "code": "NEO2026",
+      "discountPercent": 20,
+      "description": "20% Off Cyber Launch Discount"
+    },
+    {
+      "code": "SANDBOX100",
+      "discountPercent": 100,
+      "description": "100% Free Developer Sandbox Testing"
+    },
+    {
+      "code": "CYBER50",
+      "discountAmount": 50,
+      "description": "$50 Flat Off Order"
+    },
+    {
+      "code": "VIPAPEX",
+      "discountPercent": 15,
+      "description": "15% Off Apex Member Perk"
+    }
+  ]
+}
