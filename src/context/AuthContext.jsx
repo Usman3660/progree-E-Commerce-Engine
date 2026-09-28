@@ -77,22 +77,6 @@ export function AuthProvider({ children }) {
     return data;
   };
 
-  const demoLogin = async (role = 'customer') => {
-    const res = await fetch('/api/auth/demo-login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ role, guestCartKey })
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.error || 'Demo login failed');
-    }
-    localStorage.setItem('vortex_jwt_token', data.token);
-    setToken(data.token);
-    setUser(data.user);
-    return data;
-  };
-
   const logout = () => {
     localStorage.removeItem('vortex_jwt_token');
     setToken(null);
@@ -107,7 +91,6 @@ export function AuthProvider({ children }) {
       guestCartKey,
       login,
       register,
-      demoLogin,
       logout,
       isAuthenticated: !!user,
       isAdmin: user?.role === 'admin'

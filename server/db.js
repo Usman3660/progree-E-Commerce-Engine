@@ -245,7 +245,7 @@ class DatabaseService {
     if (existing) {
       throw new Error('An account already exists with this email address.');
     }
-    const salt = bcrypt.genSaltSync(10);
+    const salt = bcrypt.genSaltSync(12);
     const password_hash = bcrypt.hashSync(password, salt);
     const id = `usr_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`;
     const avatar = `https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(email)}`;
@@ -273,7 +273,8 @@ class DatabaseService {
       query += ` AND LOWER(category) = LOWER($${params.length})`;
     }
     if (search) {
-      params.push(`%${search.toLowerCase()}%`);
+      const sanitized = search.replace(/([\\%_])/g, '\\$1').toLowerCase();
+      params.push(`%${sanitized}%`);
       query += ` AND (LOWER(name) LIKE $${params.length} OR LOWER(description) LIKE $${params.length} OR LOWER(category) LIKE $${params.length} OR LOWER(sku) LIKE $${params.length})`;
     }
     if (inStockOnly) {

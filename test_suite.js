@@ -191,11 +191,25 @@ async function runTests() {
   assert.strictEqual(latestLog.change_amount, -2);
   console.log(`  ✔ Latest Audit Trail Log verified: [${latestLog.reason}] ${latestLog.product_name} (${latestLog.change_amount} units) Order: ${latestLog.order_number}\n`);
 
-  // 10. Order Refund & Inventory Restock Path
+  // 10. Order Refund & Inventory Restock Path (Protected Route)
   console.log('▶ TEST 10: Order Refund & Inventory Restock Logic Path');
-  const refundRes = await fetch(`${BASE_URL}/orders/${settledOrder.id}/refund`, {
+  
+  // 10a. Verify unauthenticated refund is rejected (401)
+  const unauthRefund = await fetch(`${BASE_URL}/orders/${settledOrder.id}/refund`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ reason: 'MALICIOUS_UNAUTH_ATTEMPT' })
+  });
+  assert.strictEqual(unauthRefund.status, 401, 'Unauthenticated refund attempt must be blocked with HTTP 401');
+  console.log('  ✔ Access Control Verified: Unauthenticated refund blocked (HTTP 401)');
+
+  // 10b. Authorized refund by order owner
+  const refundRes = await fetch(`${BASE_URL}/orders/${settledOrder.id}/refund`, {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${testUserToken}`
+    },
     body: JSON.stringify({ reason: 'AUTOMATED_TEST_SUITE' })
   });
   const refundData = await refundRes.json();

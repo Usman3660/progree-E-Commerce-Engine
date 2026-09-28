@@ -1,13 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
+const { requireAuth } = require('../middleware/auth');
+const { sanitizeString, cartAddSchema, cartUpdateSchema } = require('../utils/validation');
 
 function getCartKey(req) {
   if (req.user && req.user.id) {
     return req.user.id;
   }
   const guestHeader = req.headers['x-guest-cart-key'];
-  if (guestHeader) return guestHeader;
+  if (guestHeader) {
+    return sanitizeString(guestHeader, 100);
+  }
   return 'anonymous_guest';
 }
 
@@ -29,20 +33,23 @@ router.get('/', async (req, res) => {
       hasStockIssue
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: 'Failed to retrieve shopping cart.' });
   }
 });
 
-// POST /api/cart/add
-router.post('/add', async (req, res) => {
+// POST /api/cart/add (Protected: Requires Authenticated User)
+router.post('/add', requireAuth, async (req, res) => {
   try {
-    const cartKey = getCartKey(req);
-    const { productId, quantity = 1 } = req.body;
-    if (!productId) {
-      return res.status(400).json({ error: 'productId is required' });
+    const parseResult = cartAddSchema.safeParse(req.body);
+    if (!parseResult.success) {
+      const errorMsg = parseResult.error.issues[0]?.message || 'Invalid product or quantity.';
+      return res.status(400).json({ error: errorMsg });
     }
 
-    const items = await db.addToCart(cartKey, productId, parseInt(quantity, 10) || 1);
+    const { productId, quantity } = parseResult.data;
+    const cartKey = req.user.id;
+
+    const items = await db.addToCart(cartKey, productId, quantity);
     const subtotal = items.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
     const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -53,20 +60,23 @@ router.post('/add', async (req, res) => {
       totalItems
     });
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(400).json({ error: err.message || 'Failed to add item to cart.' });
   }
 });
 
-// PUT /api/cart/update
-router.put('/update', async (req, res) => {
+// PUT /api/cart/update (Protected)
+router.put('/update', requireAuth, async (req, res) => {
   try {
-    const cartKey = getCartKey(req);
-    const { productId, quantity } = req.body;
-    if (!productId || quantity === undefined) {
-      return res.status(400).json({ error: 'productId and quantity are required' });
+    const parseResult = cartUpdateSchema.safeParse(req.body);
+    if (!parseResult.success) {
+      const errorMsg = parseResult.error.issues[0]?.message || 'Invalid update parameters.';
+      return res.status(400).json({ error: errorMsg });
     }
 
-    const items = await db.updateCartQuantity(cartKey, productId, parseInt(quantity, 10));
+    const { productId, quantity } = parseResult.data;
+    const cartKey = req.user.id;
+
+    const items = await db.updateCartQuantity(cartKey, productId, quantity);
     const subtotal = items.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
     const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -77,15 +87,16 @@ router.put('/update', async (req, res) => {
       totalItems
     });
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(400).json({ error: err.message || 'Failed to update quantity.' });
   }
 });
 
-// DELETE /api/cart/item/:productId
-router.delete('/item/:productId', async (req, res) => {
+// DELETE /api/cart/item/:productId (Protected)
+router.delete('/item/:productId', requireAuth, async (req, res) => {
   try {
-    const cartKey = getCartKey(req);
-    const items = await db.removeFromCart(cartKey, req.params.productId);
+    const cartKey = req.user.id;
+    const cleanProductId = sanitizeString(req.params.productId, 64);
+    const items = await db.removeFromCart(cartKey, cleanProductId);
     const subtotal = items.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
     const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -96,18 +107,18 @@ router.delete('/item/:productId', async (req, res) => {
       totalItems
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: 'Failed to remove item from cart.' });
   }
 });
 
-// DELETE /api/cart/clear
-router.delete('/clear', async (req, res) => {
+// DELETE /api/cart/clear (Protected)
+router.delete('/clear', requireAuth, async (req, res) => {
   try {
-    const cartKey = getCartKey(req);
+    const cartKey = req.user.id;
     const items = await db.clearCart(cartKey);
     res.json({ message: 'Cart cleared', items: [], subtotal: 0, totalItems: 0 });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: 'Failed to clear cart.' });
   }
 });
 

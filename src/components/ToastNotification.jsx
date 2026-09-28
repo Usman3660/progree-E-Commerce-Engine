@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { CheckCircle2, AlertTriangle, Info, X } from 'lucide-react';
 
 export default function ToastNotification({ toast, onClose }) {

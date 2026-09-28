@@ -10,15 +10,12 @@ import {
   Plus, 
   Minus, 
   RotateCcw, 
-  ShieldAlert, 
-  CheckCircle2, 
-  AlertTriangle,
   Code,
-  ArrowRight,
   Database
 } from 'lucide-react';
 import { useSandbox } from '../context/SandboxContext';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 export default function SandboxAdminConsole({ onShowToast }) {
   const { 
@@ -30,6 +27,7 @@ export default function SandboxAdminConsole({ onShowToast }) {
     refreshTelemetry 
   } = useSandbox();
 
+  const { user } = useAuth();
   const { fetchCart } = useCart();
   const [loading, setLoading] = useState(false);
   const [selectedTx, setSelectedTx] = useState(null);
@@ -47,7 +45,10 @@ export default function SandboxAdminConsole({ onShowToast }) {
     try {
       const res = await fetch(`/api/products/${productId}/stock`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          ...(user?.token ? { 'Authorization': `Bearer ${user.token}` } : {})
+        },
         body: JSON.stringify({ newStock, reason: 'OPERATOR_MANUAL_OVERRIDE' })
       });
       const data = await res.json();
@@ -67,7 +68,10 @@ export default function SandboxAdminConsole({ onShowToast }) {
     try {
       const res = await fetch(`/api/orders/${orderId}/refund`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          ...(user?.token ? { 'Authorization': `Bearer ${user.token}` } : {})
+        },
         body: JSON.stringify({ reason: 'ADMIN_OPERATOR_SIMULATION' })
       });
       const data = await res.json();
@@ -90,7 +94,12 @@ export default function SandboxAdminConsole({ onShowToast }) {
     if (!window.confirm('Reset database to factory seed catalog, accounts, and inventory?')) return;
     setLoading(true);
     try {
-      const res = await fetch('/api/admin/reset-catalog', { method: 'POST' });
+      const res = await fetch('/api/admin/reset-catalog', { 
+        method: 'POST',
+        headers: {
+          ...(user?.token ? { 'Authorization': `Bearer ${user.token}` } : {})
+        }
+      });
       const data = await res.json();
       if (res.ok) {
         if (onShowToast) onShowToast(data.message, 'success');

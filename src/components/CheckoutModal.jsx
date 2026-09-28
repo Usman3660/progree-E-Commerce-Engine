@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { 
   X, 
   CreditCard, 
-  Truck, 
   MapPin, 
   CheckCircle2, 
   AlertTriangle, 

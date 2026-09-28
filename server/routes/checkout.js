@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
+const { requireAuth } = require('../middleware/auth');
+const { sanitizeString, checkoutOrderSchema } = require('../utils/validation');
 
-// List of official Stripe Sandbox Simulation Test Cards
+// Official Stripe Sandbox Simulation Test Cards
 const SANDBOX_TEST_CARDS = [
   {
     category: 'Standard Success',
@@ -64,21 +66,23 @@ router.get('/sandbox-cards', (req, res) => {
 // POST /api/checkout/validate-coupon
 router.post('/validate-coupon', async (req, res) => {
   const { code, subtotal = 0 } = req.body;
-  if (!code) {
+  const cleanCode = sanitizeString(code, 30);
+  if (!cleanCode) {
     return res.status(400).json({ error: 'Coupon code is required.' });
   }
 
   const coupons = await db.getCoupons();
-  const coupon = coupons.find(c => c.code.toUpperCase() === code.trim().toUpperCase());
+  const coupon = coupons.find(c => c.code.toUpperCase() === cleanCode.toUpperCase());
   if (!coupon) {
     return res.status(404).json({ error: 'Invalid or expired promotional code.' });
   }
 
+  const safeSubtotal = Math.max(0, parseFloat(subtotal) || 0);
   let discountAmount = 0;
   if (coupon.discountPercent) {
-    discountAmount = (subtotal * coupon.discountPercent) / 100;
+    discountAmount = (safeSubtotal * coupon.discountPercent) / 100;
   } else if (coupon.discountAmount) {
-    discountAmount = Math.min(subtotal, coupon.discountAmount);
+    discountAmount = Math.min(safeSubtotal, coupon.discountAmount);
   }
 
   res.json({
@@ -94,8 +98,9 @@ router.post('/validate-coupon', async (req, res) => {
 router.post('/create-intent', (req, res) => {
   try {
     const { amount, currency = 'usd' } = req.body;
-    if (!amount || amount <= 0) {
-      return res.status(400).json({ error: 'Valid amount is required to create payment intent.' });
+    const safeAmount = parseFloat(amount);
+    if (!safeAmount || safeAmount <= 0 || isNaN(safeAmount)) {
+      return res.status(400).json({ error: 'Valid positive amount is required to create payment intent.' });
     }
 
     const paymentIntentId = `pi_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
@@ -104,40 +109,42 @@ router.post('/create-intent', (req, res) => {
     res.json({
       paymentIntentId,
       clientSecret,
-      amount: Math.round(amount * 100),
-      currency,
+      amount: Math.round(safeAmount * 100),
+      currency: sanitizeString(currency, 10).toLowerCase() || 'usd',
       status: 'requires_payment_method',
       livemode: false,
       created: Math.floor(Date.now() / 1000)
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: 'Failed to initialize payment intent.' });
   }
 });
 
-// POST /api/checkout/process-sandbox-payment
-router.post('/process-sandbox-payment', async (req, res) => {
+// POST /api/checkout/process-sandbox-payment (Protected: Requires Authenticated User)
+router.post('/process-sandbox-payment', requireAuth, async (req, res) => {
   try {
+    const parseResult = checkoutOrderSchema.safeParse(req.body);
+    if (!parseResult.success) {
+      const errorMsg = parseResult.error.issues[0]?.message || 'Invalid checkout payload.';
+      return res.status(400).json({ error: { type: 'validation_error', message: errorMsg } });
+    }
+
     const {
       paymentIntentId,
       card,
       orderData,
       sandboxOptions = {}
-    } = req.body;
-
-    if (!orderData || !orderData.items || orderData.items.length === 0) {
-      return res.status(400).json({ error: 'Order items are required for checkout settlement.' });
-    }
+    } = parseResult.data;
 
     // 1. Simulate Latency
-    const latency = parseInt(sandboxOptions.latencyMs, 10) || 500;
+    const latency = Math.min(Math.max(0, parseInt(sandboxOptions.latencyMs, 10) || 500), 4000);
     if (latency > 0) {
-      await new Promise(resolve => setTimeout(resolve, Math.min(latency, 4000)));
+      await new Promise(resolve => setTimeout(resolve, latency));
     }
 
-    const cleanNumber = (card?.number || '').replace(/\s+/g, '');
+    const cleanNumber = (card?.number ? String(card.number) : '').replace(/\s+/g, '');
     const last4 = cleanNumber.slice(-4) || '4242';
-    const cardBrand = card?.brand || (cleanNumber.startsWith('4') ? 'Visa' : 'Mastercard');
+    const cardBrand = sanitizeString(card?.brand || (cleanNumber.startsWith('4') ? 'Visa' : 'Mastercard'), 30);
 
     // 2. Determine Outcome
     let outcome = sandboxOptions.simulateOutcome || 'auto';
@@ -154,7 +161,7 @@ router.post('/process-sandbox-payment', async (req, res) => {
       return res.json({
         requiresAction: true,
         actionType: '3ds_challenge',
-        paymentIntentId: paymentIntentId || `pi_${Date.now()}`,
+        paymentIntentId: sanitizeString(paymentIntentId, 100) || `pi_${Date.now()}`,
         otpHint: '777999',
         message: '3D Secure authentication required by issuing bank.'
       });
@@ -194,18 +201,18 @@ router.post('/process-sandbox-payment', async (req, res) => {
       });
     }
 
-    // 5. Success Path: Atomic Execution of Inventory Deduction and Order Creation
-    const userId = req.user ? req.user.id : null;
+    // 5. Success Path: Atomic Execution
+    const userId = req.user.id;
     const checkoutResult = await db.executeAtomicCheckout({
       userId,
       customerEmail: orderData.customerEmail,
       customerName: orderData.customerName,
       shippingAddress: orderData.shippingAddress,
-      shippingMethod: orderData.shippingMethod || 'cyber_express',
+      shippingMethod: orderData.shippingMethod,
       items: orderData.items,
       discountCode: orderData.discountCode,
       paymentDetails: {
-        paymentIntentId: paymentIntentId || `pi_sbx_${Date.now()}`,
+        paymentIntentId: sanitizeString(paymentIntentId, 100) || `pi_sbx_${Date.now()}`,
         cardBrand,
         cardLast4: last4,
         latencyMs: latency,
@@ -221,11 +228,11 @@ router.post('/process-sandbox-payment', async (req, res) => {
     });
 
   } catch (err) {
-    console.error('Checkout error:', err);
+    console.error('Checkout execution error:', err.message);
     res.status(400).json({
       error: {
         type: 'inventory_or_validation_error',
-        message: err.message
+        message: err.message || 'Transaction could not be settled.'
       }
     });
   }

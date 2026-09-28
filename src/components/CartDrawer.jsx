@@ -9,8 +9,6 @@ import {
   ShieldCheck, 
   Tag, 
   AlertTriangle, 
-  Check,
-  Percent,
   Sparkles
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';

@@ -6,15 +6,14 @@ import {
   LogOut, 
   Search,
   Package,
-  Sliders,
-  CheckCircle2
+  Sliders
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useSandbox } from '../context/SandboxContext';
 
 export default function Navbar({ onOpenAuth, onOpenOrders, searchQuery, setSearchQuery }) {
-  const { user, logout, demoLogin, isAuthenticated, isAdmin } = useAuth();
+  const { user, logout, isAuthenticated } = useAuth();
   const { totalItems, setIsDrawerOpen } = useCart();
   const { setIsConsoleOpen } = useSandbox();
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);

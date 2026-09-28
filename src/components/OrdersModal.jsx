@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { X, PackageCheck, FileText, Printer, RotateCcw, CheckCircle2, ShieldAlert, ShoppingBag } from 'lucide-react';
+import { X, PackageCheck, Printer, RotateCcw, ShoppingBag } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 
 export default function OrdersModal({ isOpen, onClose, onShowToast }) {
-  const { user, isAuthenticated } = useAuth();
+  const { user } = useAuth();
   const { fetchCart } = useCart();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [selectedOrder, setSelectedOrder] = useState(null);
 
   const fetchOrders = async () => {
     setLoading(true);
@@ -40,7 +39,10 @@ export default function OrdersModal({ isOpen, onClose, onShowToast }) {
     try {
       const res = await fetch(`/api/orders/${orderId}/refund`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+          'Content-Type': 'application/json',
+          ...(user?.token ? { 'Authorization': `Bearer ${user.token}` } : {})
+        }
       });
       const data = await res.json();
       if (res.ok) {
