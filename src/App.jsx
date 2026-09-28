@@ -236,6 +236,7 @@ function StoreApp() {
                 product={product}
                 onOpenDetail={(prod) => setSelectedProduct(prod)}
                 onShowToast={showToast}
+                onOpenAuth={() => setIsAuthOpen(true)}
               />
             ))}
           </div>
@@ -302,6 +303,7 @@ function StoreApp() {
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
         onShowToast={showToast}
+        onOpenAuth={() => setIsAuthOpen(true)}
       />
 
       <CartDrawer

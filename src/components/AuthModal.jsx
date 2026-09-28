@@ -95,14 +95,14 @@ export default function AuthModal({ isOpen, onClose, onShowToast }) {
               <div>
                 <label className="block text-slate-400 mb-1">Full Name</label>
                 <div className="relative">
-                  <User className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <User className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
                   <input
                     type="text"
                     required
-                    placeholder="e.g. John Doe"
+                    placeholder="e.g. Usman Ali"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="form-input pl-9"
+                    className="form-input has-icon"
                   />
                 </div>
               </div>
@@ -111,14 +111,14 @@ export default function AuthModal({ isOpen, onClose, onShowToast }) {
             <div>
               <label className="block text-slate-400 mb-1">Email Address</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
                 <input
                   type="email"
                   required
-                  placeholder="you@example.com"
+                  placeholder="usman@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="form-input pl-9"
+                  className="form-input has-icon"
                 />
               </div>
             </div>
@@ -126,14 +126,14 @@ export default function AuthModal({ isOpen, onClose, onShowToast }) {
             <div>
               <label className="block text-slate-400 mb-1">Password</label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
                 <input
                   type="password"
                   required
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="form-input pl-9"
+                  className="form-input has-icon"
                 />
               </div>
               {mode === 'register' && (

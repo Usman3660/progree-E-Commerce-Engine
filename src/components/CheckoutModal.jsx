@@ -40,8 +40,8 @@ export default function CheckoutModal({ isOpen, onClose, onShowToast, onOrderSuc
 
   // Form State
   const [shippingForm, setShippingForm] = useState({
-    fullName: user ? user.name : 'Alex Vance',
-    email: user ? user.email : 'alex@example.com',
+    fullName: user ? user.name : 'Usman Ali',
+    email: user ? user.email : 'usman.ali@example.com',
     addressLine: '742 Evergreen Terrace, Sector 4',
     city: 'Neo-Tokyo',
     state: 'Kanto',
@@ -52,7 +52,7 @@ export default function CheckoutModal({ isOpen, onClose, onShowToast, onOrderSuc
   // Card Payment State
   const [cardData, setCardData] = useState({
     cardNumber: '4242 4242 4242 4242',
-    cardholderName: user ? user.name : 'ALEX VANCE',
+    cardholderName: user ? user.name : 'USMAN ALI',
     expMonth: '12',
     expYear: '2028',
     cvc: '123',
@@ -85,8 +85,8 @@ export default function CheckoutModal({ isOpen, onClose, onShowToast, onOrderSuc
 
   const handleAutofillShipping = () => {
     setShippingForm({
-      fullName: user ? user.name : 'Alex Vance',
-      email: user ? user.email : 'alex.vance@example.com',
+      fullName: user ? user.name : 'Usman Ali',
+      email: user ? user.email : 'usman.ali@example.com',
       addressLine: '100 Innovation Way, Suite 400',
       city: 'San Francisco',
       state: 'CA',
@@ -99,7 +99,7 @@ export default function CheckoutModal({ isOpen, onClose, onShowToast, onOrderSuc
     selectTestCard(testCard);
     setCardData({
       cardNumber: testCard.cardNumber,
-      cardholderName: (shippingForm.fullName || 'ALEX VANCE').toUpperCase(),
+      cardholderName: (shippingForm.fullName || 'USMAN ALI').toUpperCase(),
       expMonth: testCard.expMonth,
       expYear: testCard.expYear,
       cvc: testCard.cvc,

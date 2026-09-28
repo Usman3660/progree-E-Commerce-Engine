@@ -71,7 +71,7 @@ const INITIAL_PRODUCTS = [
     stock_quantity: 18,
     rating: 4.88,
     reviews_count: 62,
-    image_url: 'https://images.unsplash.com/photo-1622979135225-d2ba269bc1df?auto=format&fit=crop&w=800&q=80',
+    image_url: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?auto=format&fit=crop&w=800&q=80',
     description: 'Zero-weight micro-LED retinal projection glasses with tactical heat-mapping and neural eye tracking.',
     features: JSON.stringify(['True 16K Retinal Projection', '360° LiDAR depth scanner', 'Auto-tinting photon shield']),
     specs: JSON.stringify({

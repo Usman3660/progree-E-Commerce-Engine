@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Star, Eye, AlertTriangle, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 
-export default function ProductCard({ product, onOpenDetail, onShowToast }) {
+export default function ProductCard({ product, onOpenDetail, onShowToast, onOpenAuth }) {
+  const { user } = useAuth();
   const { addToCart } = useCart();
   const [adding, setAdding] = useState(false);
 
@@ -11,6 +13,15 @@ export default function ProductCard({ product, onOpenDetail, onShowToast }) {
 
   const handleAddToCart = async (e) => {
     e.stopPropagation();
+    if (!user) {
+      if (onShowToast) {
+        onShowToast('Please sign in or create an account to add items to your cart.', 'info');
+      }
+      if (onOpenAuth) {
+        onOpenAuth();
+      }
+      return;
+    }
     if (isOutOfStock) return;
     setAdding(true);
     try {
@@ -63,6 +74,10 @@ export default function ProductCard({ product, onOpenDetail, onShowToast }) {
         <img 
           src={product.image_url} 
           alt={product.name} 
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80';
+          }}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
           loading="lazy"
         />

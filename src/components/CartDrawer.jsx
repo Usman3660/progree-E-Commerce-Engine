@@ -148,6 +148,10 @@ export default function CartDrawer({ onProceedToCheckout, onShowToast }) {
                           <img 
                             src={product.image_url} 
                             alt={product.name} 
+                            onError={(e) => {
+                              e.currentTarget.onerror = null;
+                              e.currentTarget.src = 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80';
+                            }}
                             className="w-16 h-16 rounded-lg object-cover bg-slate-900 border border-slate-800 shrink-0"
                           />
                           <div className="flex-1 min-w-0">
@@ -321,9 +325,9 @@ export default function CartDrawer({ onProceedToCheckout, onShowToast }) {
                   setIsDrawerOpen(false);
                   onProceedToCheckout();
                 }}
-                className="w-full btn-cyber-primary py-3.5 text-sm"
+                className="w-full btn-primary py-3 text-sm font-bold flex items-center justify-center gap-2"
               >
-                <span>PROCEED TO CHECKOUT PIPELINE</span>
+                <span>Proceed to Checkout</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 

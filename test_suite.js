@@ -29,14 +29,14 @@ async function runTests() {
 
   // 3. User Registration & JWT Issuance
   console.log('▶ TEST 3: User Registration with Hashed Credentials & JWT Token');
-  const regEmail = `operative_${Date.now()}@vortexapex.io`;
+  const regEmail = `usman_${Date.now()}@vortexapex.io`;
   const regRes = await fetch(`${BASE_URL}/auth/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       email: regEmail,
       password: 'StrongCyberPassword2026!',
-      name: 'Agent Zero',
+      name: 'Usman Ali',
       guestCartKey: testGuestKey
     })
   });
@@ -109,7 +109,7 @@ async function runTests() {
       card: { number: '4000 0000 0000 0069', brand: 'Visa' },
       orderData: {
         customerEmail: regEmail,
-        customerName: 'Agent Zero',
+        customerName: 'Usman Ali',
         shippingAddress: { addressLine: 'Grid 9' },
         items: [{ productId: firstProduct.id, quantity: 1, price: firstProduct.price }]
       },
@@ -131,7 +131,7 @@ async function runTests() {
       card: { number: '4000 0002 0000 0002', brand: 'Visa 3DS' },
       orderData: {
         customerEmail: regEmail,
-        customerName: 'Agent Zero',
+        customerName: 'Usman Ali',
         shippingAddress: { addressLine: 'Grid 9' },
         items: [{ productId: firstProduct.id, quantity: 1, price: firstProduct.price }]
       },
@@ -154,9 +154,9 @@ async function runTests() {
       card: { number: '4242 4242 4242 4242', brand: 'Visa' },
       orderData: {
         customerEmail: regEmail,
-        customerName: 'Agent Zero',
+        customerName: 'Usman Ali',
         shippingAddress: {
-          fullName: 'Agent Zero',
+          fullName: 'Usman Ali',
           addressLine: 'Sector 4, Neon Spire 101',
           city: 'Neo-Tokyo',
           state: 'Kanto Orbit',

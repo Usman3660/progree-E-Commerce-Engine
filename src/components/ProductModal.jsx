@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { X, ShoppingCart, Star, ShieldCheck, CheckCircle2, Cpu, AlertTriangle, Layers } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 
-export default function ProductModal({ product, onClose, onShowToast }) {
+export default function ProductModal({ product, onClose, onShowToast, onOpenAuth }) {
+  const { user } = useAuth();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [adding, setAdding] = useState(false);
@@ -13,6 +15,15 @@ export default function ProductModal({ product, onClose, onShowToast }) {
   const isLowStock = product.stock_quantity > 0 && product.stock_quantity <= 5;
 
   const handleAddToCart = async () => {
+    if (!user) {
+      if (onShowToast) {
+        onShowToast('Please sign in or create an account to add items to your cart.', 'info');
+      }
+      if (onOpenAuth) {
+        onOpenAuth();
+      }
+      return;
+    }
     if (isOutOfStock) return;
     setAdding(true);
     try {
@@ -37,11 +48,11 @@ export default function ProductModal({ product, onClose, onShowToast }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-4 px-6 border-b border-cyan-500/20 bg-[#080d1a]">
+        <div className="flex items-center justify-between p-4 px-6 border-b border-slate-800 bg-[#080d1a]">
           <div className="flex items-center gap-2">
             <Cpu className="w-4 h-4 text-cyan-400" />
-            <span className="font-mono text-xs text-cyan-300 font-bold uppercase tracking-wider">
-              HARDWARE TELEMETRY & SPECIFICATIONS // {product.sku}
+            <span className="text-xs text-slate-200 font-semibold tracking-wide">
+              Product Details & Specifications ({product.sku})
             </span>
           </div>
           <button 
@@ -58,10 +69,14 @@ export default function ProductModal({ product, onClose, onShowToast }) {
             
             {/* Image Preview */}
             <div className="space-y-3">
-              <div className="relative rounded-xl overflow-hidden border border-cyan-500/30 bg-[#060a14] h-64">
+              <div className="relative rounded-xl overflow-hidden border border-slate-700/60 bg-[#060a14] h-64">
                 <img 
                   src={product.image_url} 
                   alt={product.name} 
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80';
+                  }}
                   className="w-full h-full object-cover"
                 />
                 {product.tag && (

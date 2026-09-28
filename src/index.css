@@ -189,6 +189,25 @@
   border-color: #00f0ff;
   box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.15);
 }
+.form-input.has-icon {
+  padding-left: 2.75rem !important;
+}
+
+/* Fix browser autofill styling for dark theme */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #0a0f1d inset !important;
+  -webkit-text-fill-color: #f8fafc !important;
+  caret-color: #f8fafc !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
 
 /* Credit Card Mockup */
 .card-chip {

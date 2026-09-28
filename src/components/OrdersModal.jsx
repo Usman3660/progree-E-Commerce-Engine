@@ -129,7 +129,15 @@ export default function OrdersModal({ isOpen, onClose, onShowToast }) {
                   {ord.items.map((item, i) => (
                     <div key={i} className="p-2 rounded bg-slate-900/80 border border-slate-800/90 flex items-center justify-between">
                       <div className="flex items-center gap-2 min-w-0">
-                        <img src={item.image_url} alt="" className="w-8 h-8 rounded object-cover" />
+                        <img 
+                          src={item.image_url} 
+                          alt="" 
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80';
+                          }}
+                          className="w-8 h-8 rounded object-cover" 
+                        />
                         <div className="truncate">
                           <div className="text-white font-bold truncate">{item.product_name}</div>
                           <div className="text-[10px] text-slate-500">{item.quantity} units @ ${item.price.toFixed(2)}</div>
